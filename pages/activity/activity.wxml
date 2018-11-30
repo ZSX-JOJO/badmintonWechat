@@ -1,0 +1,90 @@
+<!--pages/activity/activity.wxml-->
+<view class='container'>
+  <view class='back_img'>
+    <image src='/images/activity_back.png'></image>
+  </view>
+  <view class='main_content'>
+    <view class='top_header'>
+      <view class='top_header_front'>
+        <image class='top_header_front_avator' src='{{avatar}}'></image>
+        <view class='top_header_middle'>
+          <text class='top_header_middle_clubName'>{{activityModel.club.clubName}}</text>
+          <view class='top_header_front_user'>
+            <text>{{activityModel.user.nick}}—{{activityModel.user.phone}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='top_header_end' bindtap='makeCall'>
+        <image src='/images/telphone.png'></image>
+      </view>
+    </view>
+    <view class='top_middle'>
+      <view class='middle_item'>
+        <image src="/images/activity_time.png"></image>
+        <view class='middle_item_right'>
+          <text>{{nowDay}}</text>
+          <view>{{activityModel.activity.startTime}}-{{activityModel.activity.endTime}}</view>
+        </view>
+      </view>
+      <view class='middle_item' bindtap='openLocation'>
+        <image src="/images/activity_address.png"></image>
+        <view class='middle_item_right'>
+          <text>{{activityModel.activity.activityAddress}}</text>
+          <view class='middle_item_icon'>查看
+            <image src='/images/activity_see.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='middle_item' bindtap='gotoMemberDetail'>
+        <image src="/images/activity_member.png"></image>
+        <view class='middle_item_right_bottom'>
+          <text class='middle_item_font'>已报</text>
+          <view class='middle_item_icon'>{{activityModel.activityMemberList.length}}/{{activityModel.activity.limitMember==0?"无限制":activityModel.activity.limitMember}}
+            <image src='/images/activity_see.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='bottom_top'>
+      <view class='bottom_top_header'>
+        <image src='/images/activity_support.png'></image>
+        <text>活动提供</text>
+      </view>
+      <view class='bottom_top_main'>
+        <view class='bottom_top_main_item'>
+          <image src='/images/activity_safty.png'></image>
+          <text>羽毛球</text>
+        </view>
+        <view class='bottom_top_main_item'>
+          <image src='/images/activity_safty.png'></image>
+          <text>场地</text>
+        </view>
+        <view class='bottom_top_main_item'>
+          <image src='/images/activity_safty.png'></image>
+          <text>水</text>
+        </view>
+      </view>
+    </view>
+    <view class='bottom_top'>
+      <view class='bottom_top_header'>
+        <image src='/images/activity_memo.png'></image>
+        <text>活动说明</text>
+      </view>
+      <view class='bottom_top_main'>
+        <text class='bottom_top_main_item'>{{activityModel.activity.activityMemo}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='main_opt' wx:if="{{status==1}}" bindtap='applyActivity'>
+    <image src='/images/icon_go.png'></image>
+    <text>立即报名</text>
+  </view>
+  <view class='main_opt' wx:if="{{status==2}}" bindtap='applyWarnModal'>
+    <image src='/images/icon_ho.png'></image>
+    <text>活动进行中...</text>
+  </view>
+  <view class='main_opt' wx:if="{{status==3}}" bindtap='applyNoModal'>
+    <image src='/images/icon_no.png'></image>
+    <text>活动已结束</text>
+  </view>
+</view>

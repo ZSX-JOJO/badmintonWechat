@@ -1,0 +1,66 @@
+/* pages/activityMember/activityMember.wxss */
+
+.container {
+  margin: 1rem 0;
+}
+
+.member_item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #f3f3f3;
+  font-size: 10pt;
+  margin: 0 0.5rem;
+}
+
+.member_item_left {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.member_item_left text {
+  font-weight: bold;
+}
+
+.member_item_left image {
+  width: 15px;
+  height: 15px;
+}
+
+.member_item_right {
+  color: #8a8a8a;
+}
+
+.no_activity {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 50% 20%;
+  font-size: 15pt;
+}
+
+.no_activity text {
+  background-image: linear-gradient( 135deg, #ABDCFF 10%, #03a9f4 100%);
+  -webkit-text-fill-color: transparent; /* 将字体设置成透明色 */
+  -webkit-background-clip: text; /* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+  -webkit-background-size: 200% 100%;
+  -webkit-animation: masked-animation 4s linear infinite;
+}
+
+@keyframes masked-animation {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}

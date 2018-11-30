@@ -1,0 +1,15 @@
+<!--pages/activityMember/activityMember.wxml-->
+<view class='container'>
+  <block wx:if='{{activityMembers.length>0}}' wx:for="{{activityMembers}}" wx:key="{{id}}" wx:for-index="index">
+    <view class="member_item">
+      <view class='member_item_left'>
+        <text>{{item.nick}}</text>
+        <image src="/images/icon_sex_{{item.memberSex}}.png"></image>
+      </view>
+      <text class='member_item_right'>{{item.memberPhone}}</text>
+    </view>
+  </block>
+  <view class='no_activity' wx:if="{{activityMembers.length<=0}}">
+    <text>暂无报名人员</text>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/club/club.wxml-->
+<view class='container'>
+  <view class='main'>
+    <block wx:for="{{clubs}}" wx:key="{{id}}" wx:for-index="index">
+      <view class='club_item' data-index="{{index}}" bindtap='gotoDetail'>
+        <view class='item_left'>
+          <image class='item_img' src='{{host+item.clubLogo}}'></image>
+          <view class='item_middle'>
+            <view class='item_name'>{{item.clubName}}</view>
+            <view class='item_address'>
+              <image src='/images/icon_address.png'></image>
+              <text>{{item.clubAddress}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='item_btn'>查看</view>
+      </view>
+    </block>
+  </view>
+</view>

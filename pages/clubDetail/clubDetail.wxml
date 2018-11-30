@@ -1,0 +1,48 @@
+<!--pages/clubDetail/clubDetail.wxml-->
+<image class='back_img' src='/images/club_back.jpg'></image>
+<view class='front_page'>
+  <image class='club_logo' src='{{clubModel.club.clubLogo}}'></image>
+  <view class='front_page_top'>
+    <text>{{clubModel.club.clubName}}</text>
+    <text class='club_owner'>{{clubModel.user.nick}}</text>
+  </view>
+  <view class='front_page_bottom'>
+    <view class='front_page_bottom_item' bindtap='goto'>
+      <text>0</text>
+      <text class='item_desc_text'>相册</text>
+    </view>
+    <view class='front_page_bottom_item' bindtap='goto'>
+      <text>20</text>
+      <text class='item_desc_text'>成员</text>
+    </view>
+    <view class='front_page_bottom_item' bindtap='goto'>
+      <image class='club_level' src='/images/icon_level.png'></image>
+      <text class='item_desc_text'>级别</text>
+    </view>
+  </view>
+</view>
+<view class='activity_view'>
+  <text class='mark_title'>本周活动</text>
+  <view class='week_view'>
+    <block wx:for="{{clubModel.activityList}}" wx:key="{{id}}" wx:for-index="index">
+      <view class="club_item" data-index="{{index}}" bindtap='seeMore'>
+        <view class='club_item_view'>
+          <text class='club_item_title'>{{item.activityDate}}</text>
+          <view class='activity_time'>
+            <image class='club_item_view_img' src='/images/icon_time.png'></image>
+            <text>{{item.startTime}}-{{item.endTime}}</text>
+          </view>
+        </view>
+        <view class='club_item_view'>
+          <text class='club_item_title'>{{item.activityAddress}}</text>
+          <text>限报：{{item.limitMember==0?"无限制":item.limitMember}}</text>
+        </view>
+      </view>
+    </block>
+    <text wx:if='{{clubModel.activityList.length<=0}}'>本周暂无活动...</text>
+  </view>
+</view>
+<view class='bottom_view'>
+  <text class='mark_title'>俱乐部介绍</text>
+  <text class='club_memo'>{{clubModel.club.clubMemo}}</text>
+</view>

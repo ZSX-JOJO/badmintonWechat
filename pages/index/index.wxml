@@ -1,0 +1,39 @@
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <scroll-view scroll-x class='header'>
+    <view class='header_view'>
+      <block wx:for="{{weeks}}" wx:key="{{id}}" wx:for-index="index">
+        <view class="club_item" data-index="{{index}}" bindtap='tabSwitch'>
+          <view class="{{showIndex==index ? 'big' : ''}}">{{weekNames[index]}}</view>
+          <view class="{{showIndex==index ? 'on' : ''}} {{showIndex==index ? 'big' : ''}}">{{item}}</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <view wx:if='{{activitys.length>0}}' class='main'>
+    <block wx:for="{{activitys}}" wx:key="{{id}}" wx:for-index="index">
+      <view class="main_item" data-index="{{index}}" bindtap='seeMore'>
+        <view class='item_top'>{{item.clubName}}</view>
+        <view class='item_middle'>
+          <text class='middle_start'>{{item.activityAddress}}</text>
+          <view class='middle_end'>
+            <text>{{item.startTime}}-{{item.endTime}}</text>
+            <image src='/images/icon_time.png'></image>
+          </view>
+        </view>
+        <view class='item_end'>
+          <view class='item_status_1' wx:if="{{item.activityStatus==1}}"> 未开始 </view>
+          <view class='item_status_2' wx:elif="{{item.activityStatus==2}}"> 进行中 </view>
+          <view class='item_status_3' wx:else> 已结束 </view>
+          <view class='end_icon'>
+            <text>报名 {{item.applyMember}}/{{item.limitMember==0?"无限制":item.limitMember}}</text>
+            <image src='/images/icon_right_{{item.activityStatus}}.png'></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='no_activity' wx:if="{{activitys.length<=0}}">
+    <text>暂无活动</text>
+  </view>
+</view>

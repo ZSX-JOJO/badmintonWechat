@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/activity/activity",
+    "pages/activityMember/activityMember",
+    "pages/apply/apply",
+    "pages/logs/logs",
+    "pages/club/club",
+    "pages/clubDetail/clubDetail",
+    "pages/mine/mine"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#03A9F4",
+    "navigationBarTitleText": "相约羽球吧",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#03A9F4",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "活动",
+        "iconPath": "/images/icon_tab1_off.png",
+        "selectedIconPath": "/images/icon_tab1_on.png"
+      },
+      {
+        "pagePath": "pages/club/club",
+        "text": "俱乐部",
+        "iconPath": "/images/icon_tab2_off.png",
+        "selectedIconPath": "/images/icon_tab2_on.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/icon_tab3_off.png",
+        "selectedIconPath": "/images/icon_tab3_on.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+<!--pages/apply/apply.wxml-->
+<view class='container'>
+  <view class='tip'>为保证正常参加活动，请如实填写活动信息。</view>
+  <form class='form' bindsubmit="formSubmit" bindreset="formReset">
+    <view class='section'>
+      <text>昵称：</text>
+      <input type='text' name="nick" value='{{activityMember.nick}}' placeholder="输入活动常用昵称" placeholder-style="font-size:9pt;color:#e5e5e5;" />
+    </view>
+    <view class='section'>
+      <text>性别：</text>
+      <radio-group class="radio_group" name="memberSex">
+        <label class="radio_radio" wx:for="{{sexs}}" wx:key="{{value}}" wx:for-index="index">
+          <radio color='#03A9F4' value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+    <view class='section'>
+      <text>电话：</text>
+      <input type='number' name="memberPhone" value='{{activityMember.memberPhone}}' placeholder="输入活动联系电话" placeholder-style="font-size:9pt;color:#e5e5e5;" />
+    </view>
+    <view class="btn_area">
+      <button class='submit_btn' formType="submit">提交</button>
+      <button class='reset_btn' formType="reset">重置</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,143 @@
+/* pages/clubDetail/clubDetail.wxss */
+
+.back_img {
+  position: absolute;
+  height: 150px;
+  top: 0;
+  width: 100%;
+}
+
+.front_page {
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 130px;
+  margin: 0 1rem;
+  width: 90%;
+}
+
+.club_logo {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  top: -30px;
+  margin-left: 1rem;
+}
+
+.front_page_top {
+  font-size: 10pt;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.club_owner {
+  font-size: 9pt;
+  color: #8a8a8a;
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+.front_page_bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 1rem 1rem;
+  border-top: 1px solid #f3f3f3;
+}
+
+.front_page_bottom_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 9pt;
+}
+
+.club_level {
+  width: 40px;
+  height: 15px;
+}
+
+.item_desc_text {
+  color: #8a8a8a;
+  margin-top: 0.5rem;
+}
+
+.activity_view {
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+}
+
+.bottom_view {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+}
+
+.week_view {
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  font-size: 8pt;
+  background-color: white;
+}
+
+.mark_title {
+  background-color: #f1f1f1;
+  font-size: 10pt;
+  padding: 0.5rem 1rem;
+}
+
+.club_item_view {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.activity_time {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.club_item {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.5rem;
+  color: #8a8a8a;
+}
+
+.club_item_title {
+  font-weight: bold;
+  color: black;
+}
+
+.club_item_view_img {
+  width: 25px;
+  height: 25px;
+}
+
+.club_memo {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: space-around;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  font-size: 8pt;
+  background-color: white;
+  line-height: 200%;
+}
